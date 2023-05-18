@@ -1,0 +1,62 @@
+<html>
+<head>
+    <link rel="stylesheet" href="slider.css">
+    <script src="slider.js"></script>
+</head>
+<body>
+  <div class="input">
+    <label for="myRange1"><span></span> Enter calorie amount : </label>
+  </div>
+    <div class="slidecontainer"> 
+        <p> <span id="demo1"></span></p>
+        <input type="range" min="1" max="4000" value="1500" class="slider" id="myRange1">
+    </div>
+    <br>
+    <label class="input" for="myRange1"> Enter Protein amount : </label>
+    <div class="slidecontainer">
+        <p> <span id="demo2"></span></p>
+        <input type="range" min="1" max="200" value="25" class="slider" id="myRange2">
+    </div>
+    <br>
+    <label class="input" for="myRange1"> Enter Fat amount : </label>
+    <br>
+    <div class="slidecontainer">
+        <p> <span id="demo3"></span></p>
+        <input type="range" min="1" max="200" value="10" class="slider" id="myRange3">
+    </div>
+    <br>
+    <label class="input" for="myRange1"> Enter Carbohydrate amount : </label>
+    <div class="slidecontainer">
+      <p> <span id="demo4"></span></p>
+      <input type="range" min="1" max="200" value="100" class="slider" id="myRange3">
+    </div>
+    <div class="button">
+        <button style="background-color: #ff7b00;border: none;color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+    
+        ">Next</button>
+        </div>
+    <script>
+    var sliders = document.querySelectorAll('.slider');
+    var outputs = document.querySelectorAll('[id^="demo"]');
+    
+    var updateOutput = function() {
+        var sliderValue = this.value;
+        var outputId = this.getAttribute('id').replace('myRange', 'demo');
+        var output = document.getElementById(outputId);
+        output.innerHTML = sliderValue;
+    };
+    
+    for (var i = 0; i < sliders.length; i++) {
+        sliders[i].addEventListener("input", updateOutput);
+        outputs[i].innerHTML = sliders[i].value;
+    }
+    </script>
+</body>
+</html>
