@@ -7,7 +7,7 @@
 <body>
   <div class="container">
     <h2> Choose your <span style="color: #ff7b00"> Ingredients </span> </h2>
-    <div>
+    <div class="search-bar">
       <label for="platform-search">    Search </label>
       <input type="text" id="platform-search">
       <button onclick="searchPlatforms()">Search</button>
@@ -16,13 +16,14 @@
     <div class="list" id="checkbox-list">
       <!-- checkboxes will be dynamically added here -->
     </div>
-
-  </div>
+  
+  
   <div class="button">
     <a href="faving.html">
     <button >Next</button>
     </a>
-    </div>
+  </div>
+  </div>
   <script >
     // Define an array of objects to store checkbox data
     const checkboxes = [

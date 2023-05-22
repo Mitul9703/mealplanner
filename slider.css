@@ -1,24 +1,42 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis:700);
+
 body {
-  font-family: "Dosis", Helvetica, Arial, sans-serif; 
-  background: #ecf0f1;
-  color: #34495e;
+  font-family: "Roboto", sans-serif;
+  background: #f5f5f5;
+  color: #000000;
   padding-top: 45px;
   text-shadow: white 1px 1px 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  justify-content: flex-start;
 }
+
+.grid-container {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 80px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
 .slidecontainer {
   border-bottom: 4px dashed #bdc3c7;
   text-align: center;
   font-weight: bold;
-  font-size: 4em;
-  width: 300px; 
+  font-size: 2em;
+  width: 300px;
   height: 100px;
   line-height: 0px;
-  margin: -65px auto;
-  letter-spacing: -.0em;
+  letter-spacing: -0.0em;
   text-shadow: white 2px 2px 2px;
   margin-bottom: 10px;
 }
+
 input[type="range"] {
   display: block;
   -webkit-appearance: none;
@@ -29,6 +47,7 @@ input[type="range"] {
   margin: 0 auto;
   outline: 0;
 }
+
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: #ff7b00;
@@ -37,38 +56,57 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   border: 2px solid white;
   cursor: pointer;
-  transition: .3s ease-in-out;
-}​
-  input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: white;
-    border: 2px solid #ff7b00;
-  }
-  input[type="range"]::-webkit-slider-thumb:active {
-    transform: scale(1.6);
+  transition: 0.3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: white;
+  border: 2px solid #ff7b00;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.6);
+}
+
+.input {
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
+  color: #34495e;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.button button {
+  background-color: #ff7b00;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.input-label {
+  text-align: center;
+  font-weight: bold;
+  font-size: .55em;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
   }
 
-  .input{
-    font-family: "Dosis", Helvetica, Arial, sans-serif;
-    color: #34495e;
-    text-align: left;
-    font-weight: bold;
-    font-size: 1.5em;
+  .slidecontainer {
+    margin-bottom: 20px;
   }
-
-  .button {
-    text-align: center;
-    margin-top: 40px;
-  }
-
-  .button button {
-    background-color: #ff7b00;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+}
