@@ -2,9 +2,22 @@
 <head>
   <link rel="stylesheet" href="faving.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --></svg>
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="header.css">
 </head>
 <body>
+
+  <div class="header">
+    <a href="#default" class="logo"><h3> Nutri<span style="color: #ff7b00">Chef</span> </h3></a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+
+
+
 <div>
   <div class="container">
     <h2>Choose your Favorite <span style="color: #ff7b00"> Ingredient </span></h2>
@@ -18,7 +31,7 @@
     <p> <span id="demo"></span></p>
     <input type="range" min="1" max="200" value="100" class="slider" id="myRange3">
   </div>
-    <a href="Slider.html">
+    <a href="nutrition_count.html">
     <div class="button">
     <button>Next</button>
     </a>
@@ -27,9 +40,35 @@
 </div>
 
   </body>
-  </body>
-  </body>
-  </body>
+</body>
+<body>
+  <footer>
+      <div class="footer-content">
+        <h3> Nutri<span style="color: #ff7b00">Chef</span> </h3>
+          <p>NutriChef Find your perfect Meal</p>
+          <ul class="socials">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          </ul>
+      </div>
+      <div class="footer-bottom">
+          <p>copyright &copy; <a href="#">NutriChef</a>  </p>
+                  <div class="footer-menu">
+                    <ul class="f-menu">
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About</a></li>
+                      <li><a href="">Contact</a></li>
+                      <li><a href="">Blog</a></li>
+                    </ul>
+                  </div>
+      </div>
+
+  </footer>
+</body>
+
+
+
   <script>
       var sliders = document.querySelectorAll('.slider');
       var outputs = document.querySelectorAll('[id="demo"]');
@@ -47,80 +86,6 @@
       }
   </script>
 
-  <script>
-    // Define an array of objects to store checkbox data
-    const checkboxes = [
-      {
-        id: "low-checkbox",
-        value: "low",
-        icon: "fad fa-",
-        title: "Low 30 min"
-      },
-      {
-        id: "med-checkbox",
-        value: "med",
-        icon: "fa fa-",
-        title: "Medium \n1 hr"
-      },
-      {
-        id: "high-checkbox",
-        value: "high",
-        icon: "fa fa-",
-        title: "High 2 hr"
-      },
-      // ...rest of the checkboxes
-    ];
-
-    // Function to dynamically add checkboxes to the page
-    function addCheckboxes() {
-      const checkboxList = document.getElementById("checkbox-list");
-      checkboxes.forEach(checkbox => {
-        const checkboxElement = document.createElement("div");
-        checkboxElement.className = "form-element";
-        checkboxElement.id = checkbox.id;
-
-        const inputElement = document.createElement("input");
-        inputElement.type = "checkbox";
-        inputElement.name = "platform";
-        inputElement.value = checkbox.value;
-        inputElement.id = checkbox.value;
-        inputElement.addEventListener("change", handleCheckboxChange);
-
-        const labelElement = document.createElement("label");
-        labelElement.htmlFor = checkbox.value;
-
-        const iconElement = document.createElement("div");
-        iconElement.className = "icon";
-        const icon = document.createElement("i");
-        icon.className = checkbox.icon;
-        iconElement.appendChild(icon);
-
-        const titleElement = document.createElement("div");
-        titleElement.className = "title";
-        titleElement.textContent = checkbox.title;
-
-        labelElement.appendChild(iconElement);
-        labelElement.appendChild(titleElement);
-        checkboxElement.appendChild(inputElement);
-        checkboxElement.appendChild(labelElement);
-        checkboxList.appendChild(checkboxElement);
-      });
-    }
-
-    // Call the addCheckboxes function to initially display the checkboxes
-    addCheckboxes();
-
-    // Function to handle checkbox change event
-    function handleCheckboxChange(event) {
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(checkbox => {
-        if (checkbox !== event.target) {
-          checkbox.checked = false;
-        }
-      });
-    }
-
-
-  </script>
+  <script src="faving.js"></script>
 </body>
 </html>
